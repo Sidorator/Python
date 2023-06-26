@@ -1,0 +1,54 @@
+<MyInterface>:
+    ScreenManager:
+        size: root.width, root.height
+        id:sm
+        Screen:
+            name:"Screen 1"
+            Label:
+                text:"kojot"
+                font_size:30
+                color: 0, 0, 0, 1
+                canvas.before:
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+                        source: 'kojot.jpg'
+
+        Screen:
+            name:"Screen 2"
+            Label:
+                text:"struś"
+                font_size:30
+                color: 0, 0, 0, 1
+                canvas.before:
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+                        source: 'strus.jpg'
+
+        Screen:
+            name:"Screen 3"
+            Label:
+                text:"małpa"
+                font_size:30
+                background_color:0, 0, 0, 1
+                color: 0, 0, 0, 1
+                canvas.before:
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+                        source: 'malpa.jpg'
+
+    FloatLayout:
+        Button:
+            id:btnext
+            size_hint:2,6
+            pos:(200,0)
+            background_color:0,0,0,0
+            on_release: root.btnext(sm)
+        Button:
+            id:btprev
+            pos:(0,0)
+            size_hint:2,6
+            background_color:0,0,0,0
+            on_release: root.btprev(sm)
