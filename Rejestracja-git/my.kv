@@ -1,0 +1,47 @@
+<Interface>:
+    BoxLayout:
+        orientation:'vertical'
+        size:root.width, root.height
+        padding:5
+        MDLabel:
+            text:"Rejestruj konto"
+            color:"white"
+            md_bg_color:"green"
+            size_hint:(1,.2)
+            font_size:25
+        MDLabel:
+            text:"Podaj email:"
+            size_hint:(1,.1)
+        MDTextField:
+            size_hint:(1,.25)
+            id:email
+        MDLabel:
+            text:"Podaj Hasło:"
+            size_hint:(1,.1)
+        MDTextField:
+            password:True
+            size_hint:(1,.25)
+            id:haslo1
+        MDLabel:
+            text:"Powtórz hasło:"
+            size_hint:(1,.1)
+        MDTextField:
+            password:True
+            size_hint:(1,.25)
+            id:haslo2
+        FloatLayout:
+            MDRaisedButton:
+                text:"Zatwierdz"
+                size_hint:(.3,.3)
+                font_size:18
+                pos:130,160
+                on_release:app.dodaj()
+            MDLabel:
+                text:""
+                id:text
+                font_size:15
+                color:"black"
+                pos:100,-20
+
+
+
