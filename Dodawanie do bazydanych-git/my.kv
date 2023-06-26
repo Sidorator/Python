@@ -1,0 +1,83 @@
+MainInterface:
+
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        MDBottomNavigation:
+            id: sm
+            panel_color: app.theme_cls.accent_dark
+
+            MDBottomNavigationItem:
+                name: "screen 1"
+                icon: "table"
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    size: root.width, root.height
+                    padding: 2
+
+                    Label:
+                        text: "Lista uczniów"
+                        size_hint: (1,0.2)
+                        font_size: 32
+                        color: "black"
+                    AnchorLayout:
+                        id: tab
+                        pos_hint:{"top":1}
+
+            MDBottomNavigationItem:
+                name: "screen 2"
+                icon: "plus"
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    padding:15
+
+                    Label:
+                        text: "Dodaj adres"
+                        color: "black"
+                        font_size: 32
+                        size_hint:(1,0.2)
+                    MDTextField:
+                        id: ulica
+                        hint_text: "Wpisz ulice"
+                        color: "black"
+
+                    MDTextField:
+                        id: dom
+                        hint_text: "Wpisz numer domu"
+                        color: "black"
+
+                    MDTextField:
+                        id: kod
+                        hint_text: "Wpisz kod pocztowy"
+                        color: "black"
+
+                    GridLayout:
+                        size_hint:(1,0.2)
+                        rows:2
+                        cols:2
+                        Button:
+                            id: czysc
+                            text:"Czyść"
+                            font_size: 25
+                            on_release: app.czysc()
+
+                        Button:
+                            id: dodaj
+                            text:"Dodaj"
+                            font_size: 25
+                            on_release: app.dodaj(sm)
+
+                        Button:
+                            id: usun
+                            text:"Usuń"
+                            font_size: 25
+                            on_release: app.usun()
+
+                        Button:
+                            id: edytuj
+                            text:"Edytuj"
+                            font_size: 25
+
