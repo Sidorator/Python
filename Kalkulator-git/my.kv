@@ -1,0 +1,91 @@
+<MyInterface>:
+    ScreenManager:
+        id:sm
+        size: root.width, root.height
+        Screen:
+            name:"kalkulator"
+            FloatLayout:
+                size: root.width, root.height
+
+                Label:
+                    text:"podaj liczby"
+                    pos:0,170
+                    font_size:25
+                    color:"blue"
+                TextInput:
+                    id:a
+                    size:150,50
+                    size_hint: None, None
+                    pos:30,350
+                    halgin:'centre'
+                Label:
+                    text:"liczba a:"
+                    pos: -100, 120
+                    color:"red"
+                    font_size:25
+                TextInput:
+                    id:b
+                    size:150,50
+                    size_hint: None, None
+                    pos:215,350
+                Label:
+                    text:"liczba b:"
+                    pos:100,120
+                    font_size:25
+                    color:"green"
+                Button:
+                    size_hint:None, None
+                    pos:20, 150
+                    text:"Dodawanie"
+                    size:170,100
+                    on_release:root.dodawanie()
+                Button:
+                    size_hint:None, None
+                    pos:20,20
+                    text:"Odejmowanie"
+                    size:170,100
+                    on_release:root.odejmowanie()
+                Button:
+                    size_hint:None, None
+                    pos:210,20
+                    text:"dzielenie"
+                    size:170,100
+                    on_release:root.dzielenie()
+                Button:
+                    size_hint:None, None
+                    pos:210, 150
+                    text:"mnozenie"
+                    size:170,100
+                    on_release:root.mnozenie()
+
+                Label:
+                    id:wynik
+                    pos:0,15
+                    text:""
+                    color:"red"
+                    font_size:25
+
+                Button:
+                    size:64,64
+                    size_hint:None, None
+                    pos:50,500
+                    background_normal:"euro.png"
+                    on_release:root.odnosnik(sm)
+
+
+        Screen:
+            name:"kantor"
+
+            Button:
+                size_hint:None, None
+                pos:210, 150
+                text:"mnozenie"
+                size:170,100
+                on_release:root.odnosnik(sm)
+
+
+
+
+
+
+
